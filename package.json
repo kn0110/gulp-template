@@ -1,0 +1,33 @@
+{
+  "name": "gulp_template_t.yamamoto_ver1.1",
+  "version": "1.1.0",
+  "description": "template_t.yamamoto",
+  "repository": "https://github.com/yama-dev",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.9.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.7.13",
+    "del": "^2.0.0",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.2.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect-php": "0.0.5",
+    "gulp-eslint": "^1.0.0",
+    "gulp-header": "^1.2.2",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-pleeease": "^1.2.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-sass": "^2.0.4",
+    "gulp-typescript": "^2.8.0",
+    "gulp-uglify": "^1.2.0",
+    "run-sequence": "^1.1.1",
+    "webpack-stream": "^2.1.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tatsuya.yamamoto",
+  "license": "ISC"
+}

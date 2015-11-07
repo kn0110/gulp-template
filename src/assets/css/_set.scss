@@ -1,0 +1,99 @@
+@charset "utf-8";
+
+$contentW: 980px;
+@mixin center {
+	width: $contentW;
+	margin: 0 auto;
+}
+@mixin absPosition ($top: auto, $right: auto, $bottom: auto, $left: auto) {
+     position: absolute;
+     top: $top;
+     right: $right;
+     bottom: $bottom;
+     left: $left;
+}
+@mixin border($color) {
+	border: 1px solid $color;
+}
+
+$auto: 0 auto;
+$white: #ffffff;
+$gray: #ebebeb;
+$red: #eb1929;
+$purple: #7435b3;
+$purple2: #6b23b3;
+$blue: #00a2f3;
+$blueTxt: #0099e6;
+$shadow : 0px 0px 20px rgba(0,0,0,0.2);
+
+@mixin opacity($opacity) {
+	opacity: $opacity;
+	$opacityIE: $opacity * 100;
+	filter: alpha(opacity=$opacityIE);
+}
+
+@mixin fontsize($fz){
+	font-size: $fz + px;
+	$rem : $fz/10;
+	font-size: $rem + rem;
+}
+
+@mixin font0(){
+	font-size: 0;
+	line-height: 0;
+}
+
+@mixin transition($param){
+	-webkit-transition: $param;
+	-moz-transition: $param;
+	-o-transition: $param;
+	transition: $param;
+}
+
+@mixin radius($param){
+	border-radius: $param;
+	-moz-border-radius: $param;
+	-webkit-border-radius: $param;
+	-o-border-radius: $param;
+	-ms-border-radius: $param;
+}
+
+@mixin boxradius($lt:5,$rt:5,$lb:5,$rb:5){
+    -webkit-border-radius: $lt +px $rt +px $lb +px $rb +px;
+            border-radius: $lt +px $rt +px $lb +px $rb +px;
+}
+
+@mixin box(){
+    @include boxradius();
+    background: url(../img/common/bgfff.png) repeat 0 0;
+
+    -webkit-box-shadow: $shadow;
+            box-shadow: $shadow;
+}
+
+$set-prefix: '', -webkit-;
+@mixin setPrefix($name, $value) {
+    @each $prefix in $set-prefix {
+        #{$prefix}#{$name}: $value;
+    }
+}
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes $animation-name {
+    @content;
+  }
+  @-moz-keyframes $animation-name {
+    @content;
+  } 
+  @keyframes $animation-name {
+    @content;
+  }
+}
+@mixin animation($animation-name) {
+  -webkit-animation: $animation-name;
+  -moz-animation: $animation-name;
+  animation: $animation-name;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
