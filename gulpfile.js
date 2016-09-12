@@ -4,7 +4,7 @@
  */
 var CONFIG = {
   outputDirectory: {
-    dev : './src/',
+    dev     : './src/',
     release : './release/',
   },
   sourceDirectory: {
@@ -12,9 +12,9 @@ var CONFIG = {
   },
   watchDirectory: {
     html : './src/**/*.html',
-    css : './src/**/*.css',
+    css  : './src/**/*.css',
     sass : './src/**/*.scss',
-    js : './src/**/*.js',
+    js   : './src/**/*.js',
   }
 };
 var SASS_AUTOPREFIXER_BROWSERS = [
@@ -29,12 +29,12 @@ var SASS_OUTPUT_STYLE = "expanded"; //nested, compact, compressed, expanded.
 /**
  * IMPORT MODULES
  */
-var del = require('del');
-var gulp = require("gulp");
-var sass = require("gulp-sass");
-var pleeease = require("gulp-pleeease");
-var plumber = require("gulp-plumber");
-var htmlhint = require("gulp-htmlhint");
+var del         = require('del');
+var gulp        = require("gulp");
+var sass        = require("gulp-sass");
+var pleeease    = require("gulp-pleeease");
+var plumber     = require("gulp-plumber");
+var htmlhint    = require("gulp-htmlhint");
 var browserSync = require("browser-sync");
 var runSequence = require('run-sequence');
 
