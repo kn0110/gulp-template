@@ -9,7 +9,6 @@ var CONFIG = {
   },
   sourceDirectory: {
     sass : './src/**/*.scss',
-    js : './src/assets/js',
   },
   watchDirectory: {
     html : './src/**/*.html',
@@ -26,23 +25,19 @@ var SASS_AUTOPREFIXER_BROWSERS = [
 ];
 var SASS_OUTPUT_STYLE = "expanded"; //nested, compact, compressed, expanded.
 
+
 /**
  * IMPORT MODULES
  */
-var gulp = require("gulp");
-var browser = require("browser-sync");
-var reload = browser.reload;
-var runSequence = require('run-sequence');
 var del = require('del');
-var plugins = require("gulp-load-plugins")();
+var gulp = require("gulp");
+var sass = require("gulp-sass");
+var pleeease = require("gulp-pleeease");
+var plumber = require("gulp-plumber");
+var htmlhint = require("gulp-htmlhint");
+var browserSync = require("browser-sync");
+var runSequence = require('run-sequence');
 
-var DevDir = './src/',
-  ReleaseDir = './release/',
-  SassDir = './src/**/*.scss',
-  CssDir = './src/assets/css',
-  HtmlWatchdir = './src/**/*.html',
-  CssWatchdir = './src/**/*.css',
-  SassWatchdir = './src/**/*.scss';
 
 /**
  * Sass Task
@@ -51,14 +46,12 @@ gulp.task('sass', function() {
   gulp.src(CONFIG.sourceDirectory.sass)
     .pipe(plumber())
     .pipe(sass({outputStyle: SASS_OUTPUT_STYLE}))
-    //ファイルの結合に使用
-    //.pipe(concat('concat.css'))
     .pipe(pleeease({
       autoprefixer: {"browsers": SASS_AUTOPREFIXER_BROWSERS},
       minifier: false
     }))
-    .pipe(gulp.dest(DevDir))
-    .pipe(browser.reload({stream:true}));
+    .pipe(gulp.dest(CONFIG.outputDirectory.dev))
+    .pipe(browserSync.reload({stream:true}));
 });
 
 /**
@@ -75,34 +68,33 @@ gulp.task('htmllint', () => {
  * Reload Task
  */
 gulp.task("reload",function() {
-  gulp.src().pipe(browser.reload({stream:true}));
+  gulp.src().pipe(browserSync.reload({stream:true}));
 });
 
 /**
  * Watch Task
  */
 gulp.task("watch",['server'], function() {
-  gulp.watch(CONFIG.HtmlWatchdir,["typescript"]);
-  gulp.watch(CONFIG.SassWatchdir,["sass"]);
+  gulp.watch(CONFIG.watchDirectory.html,["htmllint"]);
+  gulp.watch(CONFIG.watchDirectory.sass,["sass"]);
 });
 
 /**
  * Server Task
  */
 gulp.task("server", function() {
-  browser({
+  browserSync({
     server: {
-      baseDir: DevDir
+      baseDir: CONFIG.outputDirectory.dev
     }
   });
-  gulp.watch(CONFIG.HtmlWatchdir, reload);
+  gulp.watch(CONFIG.watchDirectory.html, browserSync.reload);
 });
 
 /**
  * Default Task
  */
 gulp.task('default', function(callback) {
-  return runSequence('watch',callback);
-  // return runSequence(['sass','htmllint'],'watch',callback);
+  return runSequence(['sass','htmllint'],'watch',callback);
 });
 

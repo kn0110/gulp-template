@@ -21,12 +21,10 @@
     "browser-sync": "^2.7.13",
     "del": "^2.0.0",
     "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.0",
-    "gulp-load-plugins": "^0.10.0",
     "gulp-pleeease": "^1.2.0",
     "gulp-plumber": "^1.0.1",
     "gulp-sass": "^2.0.4",
-    "gulp-uglify": "^1.2.0",
+    "gulp-htmlhint": "^0.3.1",
     "run-sequence": "^1.1.1"
   }
 }
