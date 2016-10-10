@@ -48,5 +48,16 @@ table {
 	visibility: hidden;
 }
 body {
-	font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  // @import url(//fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+	// font-family: "Noto Sans Japanese", "游ゴシック",YuGothic,"Helvetica","ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "Helvetica Neue", Arial, sans-serif;
+	font-family: "游ゴシック",YuGothic,"Helvetica","ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "Helvetica Neue", Arial, sans-serif;
+  //font-family: "游明朝", "YuMincho", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ 明朝", "ＭＳ Ｐ明朝", serif;
+  // font-family: "Helvetica Neue", Helvetica, Arial, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", Meiryo, sans-serif;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
