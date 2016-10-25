@@ -25,13 +25,13 @@ $red      : #f00;
 
 // キーフレーム
 @mixin keyframes($animation-name) {
-  @-webkit-keyframes $animation-name {
+  @-webkit-keyframes #{$animation-name} {
     @content;
   }
-  @-moz-keyframes $animation-name {
+  @-moz-keyframes #{$animation-name} {
     @content;
-  } 
-  @keyframes $animation-name {
+  }
+  @keyframes #{$animation-name} {
     @content;
   }
 }
