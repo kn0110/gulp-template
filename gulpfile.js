@@ -12,6 +12,7 @@ var CONFIG = {
   },
   watchDirectory: {
     html : './src/**/*.html',
+    php  : './src/**/*.php',
     css  : './src/**/*.css',
     sass : './src/**/*.scss',
     js   : './src/**/*.js',
@@ -77,6 +78,7 @@ gulp.task('reload',function() {
 gulp.task('watch',['server'], function() {
   gulp.watch(CONFIG.watchDirectory.html,['htmllint']);
   gulp.watch(CONFIG.watchDirectory.sass,['sass']);
+  gulp.watch(CONFIG.watchDirectory.js, browserSync.reload);
 });
 
 /**
@@ -89,6 +91,7 @@ gulp.task('server', function() {
     }
   });
   gulp.watch(CONFIG.watchDirectory.html, browserSync.reload);
+  gulp.watch(CONFIG.watchDirectory.php, browserSync.reload);
 });
 
 /**
