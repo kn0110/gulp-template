@@ -15,13 +15,12 @@ gulp
 ##主な仕様
  * Gulp
    * Sass(SCSS記法)
-   * HTML Lint
+   * HTML Hint
   
 ##ファイル構造
 ```html
 root  
 │  .gitignore
-│  .htmlhintrc
 │  gulpfile.js
 │  package.json
 │
