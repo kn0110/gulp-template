@@ -1,14 +1,13 @@
 {
   "name": "gulp_templat",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Web site gulp template",
   "keywords": "web gulp",
   "author": "yama-dev",
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "gulp": "npm install && gulp",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "gulp": "npm install && gulp"
   },
   "repository": {
     "type": "git",
