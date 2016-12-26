@@ -32,6 +32,7 @@ var SASS_OUTPUT_STYLE = 'expanded'; //nested, compact, compressed, expanded.
  */
 var del         = require('del');
 var gulp        = require('gulp');
+var cache       = require('gulp-cached');
 var sass        = require('gulp-sass');
 var pleeease    = require('gulp-pleeease');
 var plumber     = require('gulp-plumber');
@@ -45,6 +46,7 @@ var runSequence = require('run-sequence');
  */
 gulp.task('sass', function() {
   gulp.src(CONFIG.sourceDirectory.sass)
+    .pipe(cache('sass'))
     .pipe(plumber())
     .pipe(sass({outputStyle: SASS_OUTPUT_STYLE}))
     .pipe(pleeease({
