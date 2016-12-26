@@ -2,20 +2,27 @@
 /**
  * 環境設定
  */
+var CONFIG_PATH = {
+  src     : './src/',
+  release : './release/',
+  cms     : './cms/',
+  php     : './php/',
+  twig    : './src_twig/'
+};
 var CONFIG = {
   outputDirectory: {
-    dev     : './src/',
-    release : './release/',
+    dev     : CONFIG_PATH.src,
+    release : CONFIG_PATH.release,
   },
   sourceDirectory: {
-    sass : './src/**/*.scss',
+    sass    : CONFIG_PATH.src + '**/*.scss',
   },
   watchDirectory: {
-    html : './src/**/*.html',
-    php  : './src/**/*.php',
-    css  : './src/**/*.css',
-    sass : './src/**/*.scss',
-    js   : './src/**/*.js',
+    html    : CONFIG_PATH.src + '**/*.html',
+    php     : CONFIG_PATH.src + '**/*.php',
+    css     : CONFIG_PATH.src + '**/*.css',
+    sass    : CONFIG_PATH.src + '**/*.scss',
+    js      : CONFIG_PATH.src + '**/*.js',
   }
 };
 var SASS_AUTOPREFIXER_BROWSERS = [
@@ -25,7 +32,6 @@ var SASS_AUTOPREFIXER_BROWSERS = [
   'last 4 versions'
 ];
 var SASS_OUTPUT_STYLE = 'expanded'; //nested, compact, compressed, expanded.
-
 
 /**
  * IMPORT MODULES
@@ -39,7 +45,6 @@ var plumber     = require('gulp-plumber');
 var htmlhint    = require('gulp-htmlhint');
 var browserSync = require('browser-sync');
 var runSequence = require('run-sequence');
-
 
 /**
  * Sass Task
