@@ -43,6 +43,7 @@ var sass        = require('gulp-sass');
 var pleeease    = require('gulp-pleeease');
 var plumber     = require('gulp-plumber');
 var htmlhint    = require('gulp-htmlhint');
+var notify      = require("gulp-notify");
 var browserSync = require('browser-sync');
 var runSequence = require('run-sequence');
 
@@ -52,7 +53,12 @@ var runSequence = require('run-sequence');
 gulp.task('sass', function() {
   gulp.src(CONFIG.sourceDirectory.sass)
     .pipe(cache('sass'))
-    .pipe(plumber())
+    .pipe(plumber({
+      errorHandler: notify.onError({
+        title: "Sass コンパイル エラー",
+        message: "<%= error.message %>"
+      })
+    }))
     .pipe(sass({outputStyle: SASS_OUTPUT_STYLE}))
     .pipe(pleeease({
       autoprefixer: {'browsers': SASS_AUTOPREFIXER_BROWSERS},
@@ -67,7 +73,12 @@ gulp.task('sass', function() {
  */
 gulp.task('htmllint', function() {
   return gulp.src([CONFIG.watchDirectory.html])
-    .pipe(plumber())
+    .pipe(plumber({
+      errorHandler: notify.onError({
+        title: "HTML LINT エラー",
+        message: "<%= error.message %>"
+      })
+    }))
     .pipe(htmlhint({
       "tagname-lowercase": true,
       "attr-lowercase": true,
@@ -108,6 +119,11 @@ gulp.task('watch',['server'], function() {
   gulp.watch(CONFIG.watchDirectory.html,['htmllint']);
   gulp.watch(CONFIG.watchDirectory.sass,['sass']);
   gulp.watch(CONFIG.watchDirectory.js, browserSync.reload);
+  gulp.src('').pipe(notify({
+    title: 'Start Gulp',
+    message: new Date(),
+    sound: 'Glass'
+  }));
 });
 
 /**
