@@ -16,6 +16,9 @@ gulp
  * Gulp
    * Sass(SCSS記法)
    * HTML Hint
+   * Gulp-Notify
+   * Browser-Sync
+
   
 ##ファイル構造
 ```html
@@ -26,10 +29,10 @@ root
 │
 └─src
    │  index.html
+   │  sns.html
    │
    └─assets
        ├─css
-       │      style.css
        │      style.scss
        │      _reset.scss
        │      _util.scss

@@ -54,3 +54,13 @@ body {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
+// Form parts
+button,input,select,textarea {
+  min-height: 1.5em;
+  background-color: transparent;
+}
+input[type="submit"],input[type="reset"]{
+  cursor: pointer;
+}
+
