@@ -145,3 +145,16 @@ gulp.task('server', function() {
 gulp.task('default', function(callback) {
   return runSequence(['sass','htmllint'],'watch',callback);
 });
+
+/**
+ * Release Task
+ */
+gulp.task('release', function() {
+  gulp.src([CONFIG.outputDirectory.dev+'**/*','!**/*.scss','!**/*.es6'])
+    .pipe(gulp.dest(CONFIG.outputDirectory.release))
+  gulp.src('').pipe(notify({
+    title: 'Finished Release-Task',
+    message: new Date(),
+    sound: 'Glass'
+  }));
+});
