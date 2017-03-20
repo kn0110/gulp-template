@@ -50,12 +50,12 @@ CLI version 3.9.0
 ---
 
 ### __2.Gulpの起動__
-__2-1. 今回使用する`gulp-template`をダウンロードして、作業フォルダに配置する。__
-ダウンロードURL https://github.com/yama-dev/gulp-template/releases/latest  
+__2-1. 今回使用する`gulp-template`をダウンロードして、作業フォルダに配置する。__  
+ダウンロードURL https://github.com/yama-dev/gulp-template/releases/latest
 
 <br>
 
-__2-2. npmを使用してモジュールをインストール__
+__2-2. npmを使用してモジュールをインストール__  
 ※以下のコマンドで、`package.json`に記述されたモジュールがインストールされる。
 ``` javascript
 // 作業ディレクトリに移動してから
@@ -64,7 +64,7 @@ npm install
 
 <br>
 
-__2-3. Gulpを起動__
+__2-3. Gulpを起動__  
 以下のコマンドツールで以下を入力
 ``` javascript
 gulp
