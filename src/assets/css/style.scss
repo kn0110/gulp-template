@@ -13,9 +13,19 @@ body {
   -webkit-text-size-adjust: 100%;
   position: relative;
 }
+
+// PC、タブ、スマホの3形態
 @media screen and (max-width: 980px) {
 }
 @media screen and (max-width: 650px) {
 }
 @media screen and (max-width: 480px) {
+}
+
+// タブレットはPCレイアウトの場合
+@media screen and (max-width: 767px) {
+}
+
+// タブレットはスマホレイアウトの場合
+@media screen and (max-width: 768px) {
 }
