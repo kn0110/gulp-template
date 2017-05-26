@@ -44,6 +44,7 @@ var pleeease    = require('gulp-pleeease');
 var plumber     = require('gulp-plumber');
 var htmlhint    = require('gulp-htmlhint');
 var notify      = require("gulp-notify");
+var replace     = require("gulp-replace");
 var browserSync = require('browser-sync');
 var runSequence = require('run-sequence');
 
@@ -103,6 +104,23 @@ gulp.task('htmllint', function() {
       "attr-unsafe-chars": true
     }))
     .pipe(htmlhint.reporter())
+});
+
+/**
+ * Twig Task
+ * replace php-tag -> twig-tag
+ */
+gulp.task('php-twig', function(callback) {
+  return runSequence('php-twig-movefiles','php-twig-replace',callback);
+});
+gulp.task('php-twig-movefiles', function(){
+  gulp.src([CONFIG.outputDirectory.dev+'**/*','!**/*.html','!**/*.scss','!**/*.es6'])
+    .pipe(gulp.dest(CONFIG_PATH.twig))
+});
+gulp.task('php-twig-replace', function(){
+  gulp.src(CONFIG.watchDirectory.html)
+    .pipe(replace(/\<\?php include \"\.{1,2}(.*)\";? \?\>/g, '{% include "/html$1" %}'))
+    .pipe(gulp.dest(CONFIG_PATH.twig))
 });
 
 /**
