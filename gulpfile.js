@@ -102,7 +102,7 @@ gulp.task('htmllint', function() {
       "href-abs-or-rel": false,
       "attr-unsafe-chars": true
     }))
-    .pipe(htmlhint.reporter())
+    .pipe(htmlhint.reporter('htmlhint-stylish'))
 });
 
 /**
