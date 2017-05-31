@@ -118,7 +118,10 @@ gulp.task('php-twig-movefiles', function(){
     .pipe(gulp.dest(CONFIG_PATH.twig))
 });
 gulp.task('php-twig-replace', function(){
-  gulp.src(CONFIG.watchDirectory.html)
+  gulp.src('./src/**/sp/**/*.html')
+    .pipe(replace(/\<\?php include \"\.{1,2}(.*)\";? \?\>/g, '{% include "/html/sp$1" %}'))
+    .pipe(gulp.dest(CONFIG_PATH.twig))
+  gulp.src(['./src/**/*.html','!./src/**/sp/**/*.html'])
     .pipe(replace(/\<\?php include \"\.{1,2}(.*)\";? \?\>/g, '{% include "/html$1" %}'))
     .pipe(gulp.dest(CONFIG_PATH.twig))
 });
