@@ -1,28 +1,30 @@
-# __gulp-template__
-gulp 導入用 テンプレート（社内研修にも)
+# gulp 導入用 テンプレート（社内研修などにも)
 
----
-
-### __使い方__
+## 使い方
 1.  各種インストール
 2.  Gulpの起動
 
----
+## 1. 各種インストール
 
-### __1.各種インストール__
-__1-1. Git for windows のダウンロード__  
-- ダウンロードURL https://git-scm.com/downloads/  
+### 1-1. Git for windows のダウンロード  
 
-<br>
+![git for windows](https://git-for-windows.github.io/img/git_logo.png)
 
-__1-2. nodejsのインストール__  
-- ダウンロードURL https://nodejs.org/download/  
-※windows の場合は`nodist`をインストールして、Nodejsのバージョン管理をおススメ  
-  
-- 参考URL http://qiita.com/yokoh9/items/20d6bdc6030a3a861189  
-  
+→ https://git-scm.com/downloads/  
+
+### 1-2. nodejsのインストール  
+
+![nodejs](https://nodejs.org/static/images/logo.svg)
+
+→ https://nodejs.org/download/  
+
+##### ※windows の場合は`nodist`をインストールして、Nodejsのバージョン管理をおススメ  
+
+→ 参考URL http://qiita.com/yokoh9/items/20d6bdc6030a3a861189  
+
 インストールが完了したら、以下のコマンドで、正しく動作していることを確認する。  
-``` javascript
+
+``` bash
 // nodejsの確認
 $ node -v
 v4.4.5
@@ -32,13 +34,13 @@ $ npm -v
 v3.7.1
 ```
 
-<br>
+### 1-3. Gulpをグローバルにインストール  
 
-__1-3. Gulpをグローバルにインストール__  
 `npm install -g gulp`をコマンドツールで入力  
   
 インストールが完了したら、以下のコマンドで、正しく動作していることを確認する。  
-``` javascript
+
+``` bash
 // Gulp本体をグローバルにインストール
 $ npm install -g gulp
 
@@ -47,34 +49,33 @@ $ gulp -v
 CLI version 3.9.0
 ```
 
----
+## 2.Gulpの起動
 
-### __2.Gulpの起動__
-__2-1. 今回使用する`gulp-template`をダウンロードして、作業フォルダに配置する。__  
+### 2-1. 今回使用する`gulp-template`をダウンロードして、作業フォルダに配置する。  
 ダウンロードURL https://github.com/yama-dev/gulp-template/releases/latest
 
 <br>
 
-__2-2. npmを使用してモジュールをインストール__  
+2-2. npmを使用してモジュールをインストール  
 ※以下のコマンドで、`package.json`に記述されたモジュールがインストールされる。
-``` javascript
+``` bash
 // 作業ディレクトリに移動してから
 npm install
 ```
 
 <br>
 
-__2-3. Gulpを起動__  
+2-3. Gulpを起動  
 以下のコマンドツールで以下を入力
-``` javascript
+``` bash
 gulp
 ```
 
 ---
 
-### __Gulpのタスク__
-__通常の起動__  
-```javascript
+### Gulpのタスク
+通常の起動  
+```bash
 gulp
 ```
 - サーバーの起動
@@ -85,22 +86,22 @@ gulp
 
 <br>
 
-__Sassファイルのコンパイル__  
-```javascript
+Sassファイルのコンパイル  
+```bash
 gulp sass
 ```
 
 <br>
 
-__HTMLファイルの構文チェック__  
-```javascript
+HTMLファイルの構文チェック  
+```bash
 gulp htmllint
 ```
 
 <br>
 
-__ファイルのリリース__  
-```javascript
+ファイルのリリース  
+```bash
 gulp release
 ```
 - 公開ファイルのみを`/release/`ディレクトリにまとめる。
@@ -109,7 +110,7 @@ gulp release
 
 ---
 
-### __主な仕様__
+### 主な仕様
  * Gulp
    * Sass(SCSS記法)
    * HTML Hint
@@ -118,7 +119,7 @@ gulp release
 
 ---
 
-### __ファイル構造__
+### ファイル構造
 ```html
 root  
 │  .gitignore
@@ -139,4 +140,3 @@ root
            └─vender
                    jquery-3.1.0.min.js
 ```
-
