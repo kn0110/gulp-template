@@ -40,3 +40,10 @@ img {
 // タブレットはスマホレイアウトの場合
 @media screen and (max-width: 768px) {
 }
+
+// ポートレート表示の場合
+@media screen and (orientation: portrait) {
+}
+// ランドスケープ表示の場合
+@media screen and (orientation: landscape) {
+}
