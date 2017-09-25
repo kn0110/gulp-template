@@ -111,18 +111,19 @@ gulp
   │  package.json
   │
   └─src
-     │  index.html
-     │  sns.html
-     │
-     └─assets
-         ├─css
-         │      style.scss
-         │      _reset.scss
-         │      _util.scss
-         │
-         └─js
-             └─vender
-                     jquery-3.1.0.min.js
+  │  index.html
+  │  sns.html
+  │
+  └─assets
+      ├─css
+      │      style.scss
+      │      _reset.scss
+      │      _util.scss
+      │
+      └─js
+          └─vender
+                  jquery-3.2.1.min.js
+                  jquery.easing.1.3.js
   ```
 
 <br>
