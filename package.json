@@ -1,13 +1,14 @@
 {
   "name": "gulp_template",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "description": "Web site gulp template",
   "keywords": "web gulp",
   "author": "yama-dev",
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "gulp": "npm install && gulp",
+    "start": "npm install && gulp",
+    "gulp": "gulp",
     "release": "gulp release",
     "php-twig": "gulp php-twig"
   },
