@@ -1,6 +1,6 @@
 {
   "name": "gulp_template",
-  "version": "2.4.1",
+  "version": "2.4.2",
   "description": "Web site gulp template",
   "keywords": "web gulp",
   "author": "yama-dev",
@@ -8,16 +8,16 @@
   "main": "index.js",
   "scripts": {
     "start": "npm install && gulp",
-    "gulp": "gulp",
+    "develop": "gulp",
     "release": "gulp release",
     "php-twig": "gulp php-twig"
+  },
+  "engines": {
+    "node": ">=4.0.0 <=4.8.7"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/yama-dev/gulp-template"
-  },
-  "dependencies": {
-    "gulp": "^3.9.1"
   },
   "devDependencies": {
     "browser-sync": "^2.7.13",
@@ -25,13 +25,13 @@
     "gulp": "^3.9.1",
     "gulp-cached": "^1.1.1",
     "gulp-eslint": "^3.0.1",
-    "gulp-htmlhint": "^0.3.1",
+    "gulp-htmlhint": "^1.0.0",
     "gulp-notify": "^2.2.0",
     "gulp-pleeease": "^1.2.0",
-    "gulp-plumber": "^1.0.1",
-    "gulp-replace": "^0.5.4",
-    "gulp-sass": "^2.0.4",
+    "gulp-plumber": "^1.1.0",
+    "gulp-replace": "^0.6.1",
+    "gulp-sass": "^2.3.2",
     "htmlhint-stylish": "^1.0.3",
-    "run-sequence": "^1.1.1"
+    "run-sequence": "^1.2.2"
   }
 }
